@@ -70,7 +70,8 @@
                                 </rule>
                             </rules>
                         </configuration>
-                    </execution>
+
+                   </execution>
                 </executions>
             </plugin>
         </plugins>
