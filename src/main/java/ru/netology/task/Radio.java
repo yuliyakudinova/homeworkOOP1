@@ -18,11 +18,11 @@ public class Radio {
         this.currentRadioStation = currentRadioStation;
     }
 
-    public void nextRadioStation(int currentRadioStation) {
+    public void nextRadioStation() {
         setCurrentRadioStation(currentRadioStation + 1);
     }
 
-    public void prevRadioStation(int currentRadioStation) {
+    public void prevRadioStation() {
         setCurrentRadioStation(currentRadioStation - 1);
     }
 
@@ -40,11 +40,12 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    public void increaseVolume(int currentVolume) {
-        setCurrentVolume(currentVolume + 1);
-    }
+    public void increaseVolume() {
+           setCurrentVolume(currentVolume + 1);
+        }
 
-    public void reduceVolume(int currentVolume) {
+
+    public void reduceVolume() {
         setCurrentVolume(currentVolume - 1);
     }
 

@@ -34,7 +34,8 @@ class RadioTest {
     @Test
     void nextRadioStation() {
         Radio rad = new Radio();
-        rad.nextRadioStation(9);
+        rad.setCurrentRadioStation(9);
+        rad.nextRadioStation();
 
         int expected = 0;
         int actual = rad.getCurrentRadioStation();
@@ -46,7 +47,8 @@ class RadioTest {
     @Test
     void prevRadioStation() {
         Radio rad = new Radio();
-        rad.prevRadioStation(0);
+        rad.setCurrentRadioStation(0);
+        rad.prevRadioStation();
 
         int expected = 9;
         int actual = rad.getCurrentRadioStation();
@@ -59,7 +61,6 @@ class RadioTest {
     void getCurrentVolume() {
         Radio rad = new Radio();
         rad.setCurrentVolume(3);
-        ;
 
         int expected = 3;
         int actual = rad.getCurrentVolume();
@@ -81,7 +82,10 @@ class RadioTest {
     @Test
     void increaseVolume() {
         Radio rad = new Radio();
-        rad.increaseVolume(10);
+        rad.setCurrentVolume(10);
+
+        rad.increaseVolume();
+
 
         int expected = 10;
         int actual = rad.getCurrentVolume();
@@ -93,7 +97,8 @@ class RadioTest {
     @Test
     void reduceVolume() {
         Radio rad = new Radio();
-        rad.reduceVolume(0);
+        rad.setCurrentVolume(0);
+        rad.reduceVolume();
 
         int expected = 0;
         int actual = rad.getCurrentVolume();
