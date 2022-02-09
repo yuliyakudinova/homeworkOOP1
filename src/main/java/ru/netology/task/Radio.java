@@ -2,18 +2,30 @@ package ru.netology.task;
 
 public class Radio {
     private int currentRadioStation;
+    private int numberStation = 10;
     private int currentVolume;
+
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
+    public int maxStation() {
+        return (numberStation - 1);
+    }
+
+    public Radio(int numberStation) {
+        this.numberStation = numberStation;
+    }
+
+    public Radio() {
+    }
 
     public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation > 9) {
+        if (currentRadioStation > maxStation()) {
             currentRadioStation = 0;
         }
         if (currentRadioStation < 0) {
-            currentRadioStation = 9;
+            currentRadioStation = maxStation();
         }
         this.currentRadioStation = currentRadioStation;
     }
@@ -31,8 +43,8 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > 10) {
-            currentVolume = 10;
+        if (currentVolume > 100) {
+            currentVolume = 100;
         }
         if (currentVolume < 0) {
             currentVolume = 0;

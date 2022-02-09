@@ -12,13 +12,24 @@ class RadioTest {
     void getCurrentRadioStation() {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(4);
-        ;
 
         int expected = 4;
         int actual = rad.getCurrentRadioStation();
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldCheckNumberStation() {
+       Radio rad = new Radio(12);
+
+        assertEquals(11, rad.maxStation());
+
+        Radio rad1 = new Radio ();
+
+        assertEquals(9, rad1.maxStation());
+    }
+
 
     @Test
     void setCurrentRadioStation() {
@@ -71,9 +82,9 @@ class RadioTest {
     @Test
     void setCurrentVolume() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
-        int expected = 10;
+        int expected = 100;
         int actual = rad.getCurrentVolume();
 
         assertEquals(expected, actual);
@@ -82,12 +93,12 @@ class RadioTest {
     @Test
     void increaseVolume() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(10);
+        rad.setCurrentVolume(100);
 
         rad.increaseVolume();
 
 
-        int expected = 10;
+        int expected = 100;
         int actual = rad.getCurrentVolume();
 
         assertEquals(expected, actual);
